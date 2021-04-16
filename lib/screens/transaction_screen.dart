@@ -40,9 +40,11 @@ class _TransactionScreenState extends State<TransactionScreen> {
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 29),
-                  child: PriceWidget(
-                    price: _recentActivityController.getTotalPrice(),
-                    baseSize: 25,
+                  child: Obx(
+                    () => PriceWidget(
+                      price: _recentActivityController.getTotalPrice(),
+                      baseSize: 25,
+                    ),
                   ),
                 ),
               ),
@@ -142,7 +144,14 @@ class _TransactionScreenState extends State<TransactionScreen> {
           ),
         ),
         SizedBox(height: 6),
-        GroupActivity(activities: _recentActivityController.activities),
+        GetBuilder(
+          init: _recentActivityController,
+          builder: (_) {
+            return GroupActivity(
+              activities: _recentActivityController.activities,
+            );
+          },
+        ),
       ],
     );
   }
