@@ -12,6 +12,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.1.4
   google_fonts: ^2.0.0
+  flutter_svg: ^0.21.0+1
+  enum_to_string: ^2.0.1
+  intl: 0.17.0
 
 dev_dependencies:
   flutter_test:

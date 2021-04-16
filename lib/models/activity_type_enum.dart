@@ -1,0 +1,1 @@
+enum ActivityType { pay, topUp }
