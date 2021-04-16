@@ -33,13 +33,17 @@ class Keypad extends StatelessWidget {
     return Material(
       color: Theme.of(context).primaryColor,
       child: Center(
-        child: Container(
-          height: height,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: _rows(),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: height,
+            maxWidth: 450,
+          ),
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: _rows(),
+            ),
           ),
         ),
       ),
@@ -79,10 +83,11 @@ class Keypad extends StatelessWidget {
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w600,
-          fontSize: 25,
+          fontSize: 24,
         ),
       ),
-      splashRadius: 50,
+      iconSize: 30,
+      splashRadius: 25,
       splashColor: Colors.red,
     );
   }
@@ -100,7 +105,8 @@ class Keypad extends StatelessWidget {
           fontSize: 25,
         ),
       ),
-      splashRadius: 50,
+      iconSize: 30,
+      splashRadius: 25,
       splashColor: Colors.red,
     );
   }
@@ -110,9 +116,13 @@ class Keypad extends StatelessWidget {
       onPressed: () {
         controller?.backKeyPress();
       },
-      icon: Icon(Icons.arrow_back_ios_rounded),
+      icon: Icon(
+        Icons.arrow_back_ios_rounded,
+        size: 24,
+      ),
       color: Colors.white,
-      splashRadius: 50,
+      iconSize: 30,
+      splashRadius: 25,
     );
   }
 }
