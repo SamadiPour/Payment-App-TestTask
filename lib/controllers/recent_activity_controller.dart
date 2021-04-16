@@ -18,7 +18,7 @@ class RecentActivityController extends GetxController {
 
   // when user add a activity
   addActivity(ActivityModel activity) {
-    activities.add(activity);
+    activities.insert(0, activity);
     update();
   }
 

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:payment_app_test_task/controllers/recent_activity_controller.dart';
 import 'package:payment_app_test_task/data/dummy_activities.dart';
 import 'package:payment_app_test_task/models/activity_model.dart';
+import 'package:payment_app_test_task/models/activity_type_enum.dart';
+import 'package:payment_app_test_task/screens/add_activity/add_activity_screen.dart';
 import 'package:payment_app_test_task/utils/global_colors.dart';
 import 'package:payment_app_test_task/widgets/clickable_icon_widget.dart';
 import 'package:payment_app_test_task/widgets/custom_app_bar.dart';
@@ -99,12 +101,20 @@ class _TransactionScreenState extends State<TransactionScreen> {
                     ClickableIconWidget(
                       title: 'Pay',
                       svgPath: 'assets/icons/phone_icon.svg',
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(
+                          () => AddActivityScreen(type: ActivityType.pay),
+                        );
+                      },
                     ),
                     ClickableIconWidget(
                       title: 'Top up',
                       svgPath: 'assets/icons/wallet_icon.svg',
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(
+                          () => AddActivityScreen(type: ActivityType.topUp),
+                        );
+                      },
                     ),
                   ],
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends AppBar {
@@ -20,7 +21,10 @@ class CustomAppBar extends AppBar {
               ? [
                   IconButton(
                     icon: Icon(Icons.cancel),
-                    onPressed: () {},
+                    splashRadius: 22,
+                    onPressed: () {
+                      Get.back();
+                    },
                   ),
                 ]
               : [],

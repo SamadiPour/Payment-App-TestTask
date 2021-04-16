@@ -8,11 +8,15 @@ class ActivityModel {
   ActivityType type;
 
   ActivityModel({
-    required this.date,
     required this.amount,
     required this.type,
+    required this.date,
     this.title,
   });
+
+  ActivityModel.empty(this.type)
+      : amount = 0,
+        date = DateTime.now();
 
   factory ActivityModel.fromJson(Map<String, dynamic> json) => ActivityModel(
         title: json['title'],
