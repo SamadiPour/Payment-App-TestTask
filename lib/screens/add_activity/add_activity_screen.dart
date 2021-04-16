@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:payment_app_test_task/controllers/page_fragments_controller.dart';
 import 'package:payment_app_test_task/models/activity_model.dart';
 import 'package:payment_app_test_task/models/activity_type_enum.dart';
+import 'package:payment_app_test_task/screens/add_activity/add_activity_money_fragment.dart';
 import 'package:payment_app_test_task/screens/add_activity/add_activity_to_who_fragment.dart';
 import 'package:payment_app_test_task/widgets/custom_app_bar.dart';
 
@@ -29,8 +30,8 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
     _controller = Get.put(
       PageFragmentsController(
         [
-          // AddActivityMoneyFragment(type: widget.type),
-          AddActivityToWhoFragment(),
+          AddActivityMoneyFragment(type: widget.type),
+          if (widget.type == ActivityType.pay) AddActivityToWhoFragment(),
         ],
       ),
     );
@@ -59,7 +60,7 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
               ) {
                 return SharedAxisTransition(
                   child: child,
-                  fillColor: Colors.white,
+                  fillColor: Theme.of(context).primaryColor,
                   animation: animation,
                   secondaryAnimation: secondaryAnimation,
                   transitionType: SharedAxisTransitionType.horizontal,
