@@ -88,7 +88,7 @@ class Keypad extends StatelessWidget {
       ),
       iconSize: 30,
       splashRadius: 25,
-      splashColor: Colors.red,
+      color: Colors.white,
     );
   }
 
@@ -107,7 +107,7 @@ class Keypad extends StatelessWidget {
       ),
       iconSize: 30,
       splashRadius: 25,
-      splashColor: Colors.red,
+      color: Colors.white,
     );
   }
 
