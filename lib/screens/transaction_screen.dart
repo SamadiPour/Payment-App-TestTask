@@ -87,7 +87,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
             ),
             child: Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(10),
               ),
               elevation: 5,
               child: Padding(

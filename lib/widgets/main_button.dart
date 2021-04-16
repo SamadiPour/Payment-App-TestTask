@@ -30,6 +30,11 @@ class MainButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(
             GlobalColors.lightWhite.withOpacity(0.5),
           ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+          ),
         ),
       ),
     );
