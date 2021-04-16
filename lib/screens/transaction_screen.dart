@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:payment_app_test_task/controllers/recent_activity_controller.dart';
 import 'package:payment_app_test_task/data/dummy_activities.dart';
 import 'package:payment_app_test_task/models/activity_model.dart';
 import 'package:payment_app_test_task/utils/global_colors.dart';
+import 'package:payment_app_test_task/widgets/clickable_icon_widget.dart';
 import 'package:payment_app_test_task/widgets/custom_app_bar.dart';
 import 'package:payment_app_test_task/widgets/group_activity.dart';
 import 'package:payment_app_test_task/widgets/price_widget.dart';
@@ -88,38 +88,23 @@ class _TransactionScreenState extends State<TransactionScreen> {
               elevation: 5,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
+                  horizontal: 15,
                   vertical: 15,
                 ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                child: Wrap(
+                  spacing: 25,
+                  runSpacing: 20,
+                  alignment: WrapAlignment.center,
                   children: [
-                    Column(
-                      children: [
-                        SvgPicture.asset('assets/icons/phone_icon.svg'),
-                        SizedBox(height: 3),
-                        Text(
-                          'Pay',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
+                    ClickableIconWidget(
+                      title: 'Pay',
+                      svgPath: 'assets/icons/phone_icon.svg',
+                      onPressed: () {},
                     ),
-                    Column(
-                      children: [
-                        SvgPicture.asset('assets/icons/wallet_icon.svg'),
-                        SizedBox(height: 3),
-                        Text(
-                          'Top up',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
+                    ClickableIconWidget(
+                      title: 'Top up',
+                      svgPath: 'assets/icons/wallet_icon.svg',
+                      onPressed: () {},
                     ),
                   ],
                 ),
