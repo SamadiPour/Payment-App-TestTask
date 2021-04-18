@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_app_test_task/models/activity_type_enum.dart';
 import 'package:payment_app_test_task/utils/global_colors.dart';
 
 class ActivityPriceWidget extends StatelessWidget {
@@ -6,14 +7,14 @@ class ActivityPriceWidget extends StatelessWidget {
   final double baseSize;
   final Color textColor;
   final double diffSize;
-  final bool isTopUp;
+  final ActivityType type;
 
   ActivityPriceWidget({
     required this.price,
+    required this.type,
     this.baseSize = 16,
     this.textColor = Colors.black,
     this.diffSize = 6,
-    this.isTopUp = false,
   });
 
   @override
@@ -21,7 +22,7 @@ class ActivityPriceWidget extends StatelessWidget {
     return Text.rich(
       TextSpan(
         children: [
-          if (isTopUp)
+          if (type == ActivityType.topUp)
             TextSpan(
               text: '+',
               style: TextStyle(
@@ -43,7 +44,7 @@ class ActivityPriceWidget extends StatelessWidget {
         ],
       ),
       style: TextStyle(
-        color: isTopUp ? GlobalColors.primary : textColor,
+        color: type == ActivityType.topUp ? GlobalColors.primary : textColor,
         fontWeight: FontWeight.w300,
       ),
       maxLines: 1,

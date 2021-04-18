@@ -31,7 +31,10 @@ class ActivityWidget extends StatelessWidget {
               ),
             ),
             Spacer(),
-            ActivityPriceWidget(price: activity.amount * 1000),
+            ActivityPriceWidget(
+              price: activity.amount,
+              type: activity.type,
+            ),
           ],
         ),
       ),
