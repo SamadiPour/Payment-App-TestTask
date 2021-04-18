@@ -40,8 +40,8 @@ class _TransactionScreenState extends State<TransactionScreen> {
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 29),
-                  child: Container(
-                    width: 150,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 250),
                     child: FittedBox(
                       child: Obx(
                         () => PriceWidget(
@@ -56,6 +56,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
             ),
             _floatingPanel(context),
             _recentActivity(context),
+            SizedBox(height: 15),
           ],
         ),
       ),

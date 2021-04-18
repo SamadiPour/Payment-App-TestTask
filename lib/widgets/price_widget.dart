@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_app_test_task/utils/tools.dart';
 
 class PriceWidget extends StatelessWidget {
   final double price;
@@ -25,7 +26,7 @@ class PriceWidget extends StatelessWidget {
             ),
           ),
           TextSpan(
-            text: price.toInt().abs().toString(),
+            text: formatPrice(price.toInt().abs()),
             style: TextStyle(
               fontSize: baseSize + diffSize,
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app_test_task/models/activity_type_enum.dart';
 import 'package:payment_app_test_task/utils/global_colors.dart';
+import 'package:payment_app_test_task/utils/tools.dart';
 
 class ActivityPriceWidget extends StatelessWidget {
   final double price;
@@ -30,7 +31,7 @@ class ActivityPriceWidget extends StatelessWidget {
               ),
             ),
           TextSpan(
-            text: price.toInt().toString(),
+            text: formatPrice(price.toInt()),
             style: TextStyle(
               fontSize: baseSize + diffSize,
             ),
