@@ -23,17 +23,31 @@ class ActivityWidget extends StatelessWidget {
                   : 'assets/icons/topup_icon.svg',
             ),
             SizedBox(width: 8),
-            Text(
-              activity.title != null ? activity.title! : 'Top Up',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
+            Flexible(
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  activity.title != null ? activity.title! : 'Top Up',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
-            Spacer(),
-            ActivityPriceWidget(
-              price: activity.amount,
-              type: activity.type,
+            SizedBox(width: 15),
+            Container(
+              child: Flexible(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: ActivityPriceWidget(
+                    price: activity.amount,
+                    type: activity.type,
+                  ),
+                ),
+              ),
             ),
           ],
         ),

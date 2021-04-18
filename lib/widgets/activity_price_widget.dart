@@ -48,6 +48,7 @@ class ActivityPriceWidget extends StatelessWidget {
         fontWeight: FontWeight.w300,
       ),
       maxLines: 1,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }
