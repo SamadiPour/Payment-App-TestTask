@@ -40,10 +40,15 @@ class _TransactionScreenState extends State<TransactionScreen> {
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 29),
-                  child: Obx(
-                    () => PriceWidget(
-                      price: _recentActivityController.getTotalPrice(),
-                      baseSize: 25,
+                  child: Container(
+                    width: 150,
+                    child: FittedBox(
+                      child: Obx(
+                        () => PriceWidget(
+                          price: _recentActivityController.getTotalPrice(),
+                          baseSize: 25,
+                        ),
+                      ),
                     ),
                   ),
                 ),

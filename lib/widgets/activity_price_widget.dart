@@ -46,6 +46,7 @@ class ActivityPriceWidget extends StatelessWidget {
         color: isTopUp ? GlobalColors.primary : textColor,
         fontWeight: FontWeight.w300,
       ),
+      maxLines: 1,
     );
   }
 }

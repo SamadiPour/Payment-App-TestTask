@@ -44,11 +44,16 @@ class _AddActivityMoneyFragmentState extends State<AddActivityMoneyFragment> {
               ),
               SizedBox(height: 45),
               Center(
-                child: Obx(
-                  () => PriceWidget(
-                    price: _keypadController.amount.value,
-                    baseSize: 20,
-                    diffSize: 45,
+                child: Container(
+                  height: 80,
+                  child: FittedBox(
+                    child: Obx(
+                      () => PriceWidget(
+                        price: _keypadController.amount.value,
+                        baseSize: 20,
+                        diffSize: 45,
+                      ),
+                    ),
                   ),
                 ),
               ),

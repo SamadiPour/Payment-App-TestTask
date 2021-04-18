@@ -44,6 +44,7 @@ class PriceWidget extends StatelessWidget {
             : textColor,
         fontWeight: FontWeight.w600,
       ),
+      maxLines: 1,
     );
   }
 }

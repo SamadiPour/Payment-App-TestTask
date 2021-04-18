@@ -4,7 +4,7 @@ import 'package:payment_app_test_task/models/keypad_status.dart';
 class KeypadController extends GetxController {
   RxDouble _amount = 0.0.obs;
   KeypadState _state = KeypadState.number;
-  static const int _limit = 9999999;
+  static const int _limit = 999999999;
 
   RxDouble get amount => _amount;
 
