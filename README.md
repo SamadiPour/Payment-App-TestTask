@@ -1,8 +1,8 @@
-# Payment App TestTask
+# Payment App - TestTask
 
-This is a technical task given by [Tappter](https://www.tappter.com/) for the flutter application developer position.
+This is a Flutter application as a technical task for the developer position given by [Tappter](https://www.tappter.com/).
 
-### Given Desing
+### Given Design
 ![image](https://user-images.githubusercontent.com/24422125/115130959-43f1c500-a009-11eb-94f1-cf88da1ac639.png)
 
 ### Actual Implementation
